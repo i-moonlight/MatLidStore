@@ -10,4 +10,10 @@
     <ProjectReference Include="..\MLS.Domain\MLS.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Contracts\Logging\" />
+    <Folder Include="DTO\" />
+    <Folder Include="Features\" />
+  </ItemGroup>
+
 </Project>
