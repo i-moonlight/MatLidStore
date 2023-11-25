@@ -29,9 +29,9 @@ namespace MLS.Persistence.DatabaseContext
         public DbSet<ProductSupplier> ProductSuppliers { get; set; }
         public DbSet<Promotion> Promotions { get; set; }
         public DbSet<Return> Returns { get; set; }
-        public DbSet<ReviewFeedback> ReviewFeedbacks { get; set; }
+        public DbSet<ReviewFeedback> ReviewsFeedback { get; set; }
         public DbSet<Review> Reviews { get; set; }
-        public DbSet<Shipping> Shippings { get; set; }
+        public DbSet<Shipping> Shipping { get; set; }
         public DbSet<ShoppingCart> ShoppingCarts { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<User> Users { get; set; }

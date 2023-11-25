@@ -659,7 +659,7 @@ namespace MLS.Persistence.Migrations
 
                     b.HasIndex("ReviewId");
 
-                    b.ToTable("ReviewFeedbacks");
+                    b.ToTable("ReviewsFeedback");
                 });
 
             modelBuilder.Entity("MLS.Domain.Shipping", b =>
@@ -694,7 +694,7 @@ namespace MLS.Persistence.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("Shippings");
+                    b.ToTable("Shipping");
                 });
 
             modelBuilder.Entity("MLS.Domain.ShoppingCart", b =>

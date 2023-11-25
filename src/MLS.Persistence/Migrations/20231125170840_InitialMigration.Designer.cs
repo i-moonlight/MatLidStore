@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MLS.Persistence.Migrations
 {
     [DbContext(typeof(MatLidStoreDatabaseContext))]
-    [Migration("20231124112324_InitialMigration")]
+    [Migration("20231125170840_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -661,7 +661,7 @@ namespace MLS.Persistence.Migrations
 
                     b.HasIndex("ReviewId");
 
-                    b.ToTable("ReviewFeedbacks");
+                    b.ToTable("ReviewsFeedback");
                 });
 
             modelBuilder.Entity("MLS.Domain.Shipping", b =>
@@ -696,7 +696,7 @@ namespace MLS.Persistence.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("Shippings");
+                    b.ToTable("Shipping");
                 });
 
             modelBuilder.Entity("MLS.Domain.ShoppingCart", b =>

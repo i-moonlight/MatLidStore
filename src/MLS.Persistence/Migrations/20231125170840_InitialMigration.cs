@@ -359,7 +359,7 @@ namespace MLS.Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Shippings",
+                name: "Shipping",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -373,9 +373,9 @@ namespace MLS.Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Shippings", x => x.Id);
+                    table.PrimaryKey("PK_Shipping", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Shippings_Orders_OrderId",
+                        name: "FK_Shipping_Orders_OrderId",
                         column: x => x.OrderId,
                         principalTable: "Orders",
                         principalColumn: "Id",
@@ -569,7 +569,7 @@ namespace MLS.Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ReviewFeedbacks",
+                name: "ReviewsFeedback",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -581,9 +581,9 @@ namespace MLS.Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ReviewFeedbacks", x => x.Id);
+                    table.PrimaryKey("PK_ReviewsFeedback", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ReviewFeedbacks_Reviews_ReviewId",
+                        name: "FK_ReviewsFeedback_Reviews_ReviewId",
                         column: x => x.ReviewId,
                         principalTable: "Reviews",
                         principalColumn: "Id",
@@ -686,11 +686,6 @@ namespace MLS.Persistence.Migrations
                 column: "OrderId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ReviewFeedbacks_ReviewId",
-                table: "ReviewFeedbacks",
-                column: "ReviewId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Reviews_CustomerId",
                 table: "Reviews",
                 column: "CustomerId");
@@ -701,8 +696,13 @@ namespace MLS.Persistence.Migrations
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Shippings_OrderId",
-                table: "Shippings",
+                name: "IX_ReviewsFeedback_ReviewId",
+                table: "ReviewsFeedback",
+                column: "ReviewId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Shipping_OrderId",
+                table: "Shipping",
                 column: "OrderId");
 
             migrationBuilder.CreateIndex(
@@ -766,10 +766,10 @@ namespace MLS.Persistence.Migrations
                 name: "Returns");
 
             migrationBuilder.DropTable(
-                name: "ReviewFeedbacks");
+                name: "ReviewsFeedback");
 
             migrationBuilder.DropTable(
-                name: "Shippings");
+                name: "Shipping");
 
             migrationBuilder.DropTable(
                 name: "ShoppingCarts");
