@@ -12,32 +12,6 @@
 
   <ItemGroup>
     <Folder Include="Contracts\Logging\" />
-    <Folder Include="DTO\Address\" />
-    <Folder Include="DTO\CartItem\" />
-    <Folder Include="DTO\Category\" />
-    <Folder Include="DTO\Coupon\" />
-    <Folder Include="DTO\Customer\" />
-    <Folder Include="DTO\Delivery\" />
-    <Folder Include="DTO\Employee\" />
-    <Folder Include="DTO\Inventory\" />
-    <Folder Include="DTO\Invoice\" />
-    <Folder Include="DTO\Order\" />
-    <Folder Include="DTO\Payment\" />
-    <Folder Include="DTO\Product\" />
-    <Folder Include="DTO\Promotion\" />
-    <Folder Include="DTO\Return\" />
-    <Folder Include="DTO\Review\" />
-    <Folder Include="DTO\Shipping\" />
-    <Folder Include="DTO\ShoppingCart\" />
-    <Folder Include="DTO\Supplier\" />
-    <Folder Include="DTO\User\" />
-    <Folder Include="DTO\WishList\" />
-    <Folder Include="Features\Address\Commands\" />
-    <Folder Include="Features\Address\Queries\" />
-    <Folder Include="Features\CartItem\Commands\" />
-    <Folder Include="Features\CartItem\Queries\" />
-    <Folder Include="Features\Category\Commands\" />
-    <Folder Include="Features\Category\Queries\" />
     <Folder Include="Features\Coupon\Commands\" />
     <Folder Include="Features\Coupon\Queries\" />
     <Folder Include="Features\Customer\Commands\" />
@@ -72,6 +46,15 @@
     <Folder Include="Features\User\Queries\" />
     <Folder Include="Features\WishList\Commands\" />
     <Folder Include="Features\WishList\Queries\" />
+    <Folder Include="MappingProfiles\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="FluentValidation" Version="11.8.1" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.8.1" />
+    <PackageReference Include="MediatR" Version="12.2.0" />
   </ItemGroup>
 
 </Project>

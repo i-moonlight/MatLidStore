@@ -1,4 +1,5 @@
-﻿using MLS.Application.Contracts.Persistence.Common;
+﻿using Microsoft.EntityFrameworkCore;
+using MLS.Application.Contracts.Persistence.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;

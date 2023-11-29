@@ -1,0 +1,36 @@
+﻿using AutoMapper;
+using MediatR;
+using MLS.Application.Contracts.Persistence;
+using MLS.Application.Exceptions;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MLS.Application.Features.Address.Commands.DeleteAddressCommand
+{
+    public class DeleteAddressCommandHandler : IRequestHandler<DeleteAddressCommand, Unit>
+    {
+        private readonly IAddressRepository _addressRepository;
+
+        public DeleteAddressCommandHandler(IAddressRepository addressRepository)
+        {
+            _addressRepository = addressRepository;
+        }
+
+        public async Task<Unit> Handle(DeleteAddressCommand request, CancellationToken cancellationToken)
+        {
+            var addressToDelete = await _addressRepository.GetById(request.AddressId);
+
+            if (addressToDelete == null)
+            {
+                throw new NotFoundException(nameof(Domain.Address), request.AddressId);
+            }
+
+            await _addressRepository.Delete(addressToDelete);
+
+            return Unit.Value;
+        }
+    }
+}
