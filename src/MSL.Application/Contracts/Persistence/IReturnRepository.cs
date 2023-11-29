@@ -1,6 +1,9 @@
-﻿namespace MLS.Application.Contracts.Persistence
+﻿using MLS.Application.Contracts.Persistence.Common;
+using MLS.Domain;
+
+namespace MLS.Application.Contracts.Persistence
 {
-    public interface IReturnRepository
+    public interface IReturnRepository : IGenericRepository<Return>
     {
     }
 }
