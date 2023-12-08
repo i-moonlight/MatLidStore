@@ -12,23 +12,7 @@
 
   <ItemGroup>
     <Folder Include="Contracts\Logging\" />
-    <Folder Include="Features\Coupon\Commands\" />
-    <Folder Include="Features\Customer\Commands\" />
-    <Folder Include="Features\Customer\Queries\" />
-    <Folder Include="Features\Delivery\Commands\" />
-    <Folder Include="Features\Delivery\Queries\" />
-    <Folder Include="Features\Employee\Commands\" />
-    <Folder Include="Features\Employee\Queries\" />
-    <Folder Include="Features\Inventory\Commands\" />
-    <Folder Include="Features\Inventory\Queries\" />
-    <Folder Include="Features\Invoice\Commands\" />
-    <Folder Include="Features\Invoice\Queries\" />
     <Folder Include="Features\Order\Commands\" />
-    <Folder Include="Features\Order\Queries\" />
-    <Folder Include="Features\Payment\Commands\" />
-    <Folder Include="Features\Payment\Queries\" />
-    <Folder Include="Features\Product\Commands\" />
-    <Folder Include="Features\Product\Queries\" />
     <Folder Include="Features\Promotion\Commands\" />
     <Folder Include="Features\Promotion\Queries\" />
     <Folder Include="Features\Return\Commands\" />
