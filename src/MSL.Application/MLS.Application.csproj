@@ -12,23 +12,6 @@
 
   <ItemGroup>
     <Folder Include="Contracts\Logging\" />
-    <Folder Include="Features\Order\Commands\" />
-    <Folder Include="Features\Promotion\Commands\" />
-    <Folder Include="Features\Promotion\Queries\" />
-    <Folder Include="Features\Return\Commands\" />
-    <Folder Include="Features\Return\Queries\" />
-    <Folder Include="Features\Review\Commands\" />
-    <Folder Include="Features\Review\Queries\" />
-    <Folder Include="Features\Shipping\Commands\" />
-    <Folder Include="Features\Shipping\Queries\" />
-    <Folder Include="Features\ShoppingCart\Commands\" />
-    <Folder Include="Features\ShoppingCart\Queries\" />
-    <Folder Include="Features\Supplier\Commands\" />
-    <Folder Include="Features\Supplier\Queries\" />
-    <Folder Include="Features\User\Commands\" />
-    <Folder Include="Features\User\Queries\" />
-    <Folder Include="Features\WishList\Commands\" />
-    <Folder Include="Features\WishList\Queries\" />
     <Folder Include="MappingProfiles\" />
   </ItemGroup>
 
