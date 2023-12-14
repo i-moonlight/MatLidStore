@@ -20,11 +20,11 @@ namespace MLS.Application.Features.Order.Commands.DeleteOrderEmployeeCommand
 
         public async Task<Unit> Handle(DeleteOrderEmployeeCommand request, CancellationToken cancellationToken)
         {
-            var orderEmployeeToDelete = await _orderEmployeeRepository.GetById(request.OrderEmployeeId);
+            var orderEmployeeToDelete = await _orderEmployeeRepository.GetById(request.Id);
 
             if (orderEmployeeToDelete == null)
             {
-                throw new NotFoundException(nameof(Domain.OrderEmployee), request.OrderEmployeeId);
+                throw new NotFoundException(nameof(Domain.OrderEmployee), request.Id);
             }
 
             await _orderEmployeeRepository.Delete(orderEmployeeToDelete);

@@ -20,7 +20,7 @@ namespace MLS.Application.Features.CartItem.Commands.CreateCartItemCommand
             var cartItemToCreate = _mapper.Map<Domain.CartItem>(request);
             await _cartItemRepository.Create(cartItemToCreate);
 
-            return cartItemToCreate.CartItemId;
+            return cartItemToCreate.Id;
         }
     }
 }

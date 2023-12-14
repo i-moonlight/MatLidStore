@@ -15,11 +15,11 @@ namespace MLS.Application.Features.Promotion.Commands.DeletePromotionCommand
 
         public async Task<Unit> Handle(DeletePromotionCommand request, CancellationToken cancellationToken)
         {
-            var promotionToDelete = await _promotionRepository.GetById(request.PromotionId);
+            var promotionToDelete = await _promotionRepository.GetById(request.Id);
 
             if (promotionToDelete == null)
             {
-                throw new NotFoundException(nameof(Domain.Promotion), request.PromotionId);
+                throw new NotFoundException(nameof(Domain.Promotion), request.Id);
             }
 
             await _promotionRepository.Delete(promotionToDelete);

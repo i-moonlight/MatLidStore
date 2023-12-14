@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
+using MLS.Application.Contracts.Logging;
 using MLS.Application.Contracts.Persistence;
 using MLS.Application.Exceptions;
 
@@ -9,11 +10,13 @@ namespace MLS.Application.Features.Address.Commands.CreateAddressCommand
     {
         private readonly IAddressRepository _addressRepository;
         private readonly IMapper _mapper;
+        private readonly IAppLogger<CreateAddressCommandHandler> _logger;
 
-        public CreateAddressCommandHandler(IAddressRepository addressRepository, IMapper mapper)
+        public CreateAddressCommandHandler(IAddressRepository addressRepository, IMapper mapper, IAppLogger<CreateAddressCommandHandler> logger)
         {
             _addressRepository = addressRepository;
             _mapper = mapper;
+            _logger = logger;
         }
 
         public async Task<int> Handle(CreateAddressCommand request, CancellationToken cancellationToken)
@@ -29,7 +32,8 @@ namespace MLS.Application.Features.Address.Commands.CreateAddressCommand
             var addressToCreate = _mapper.Map<Domain.Address>(request);
             await _addressRepository.Create(addressToCreate);
 
-            return addressToCreate.AddressId;
+            _logger.LogInformation("Created address successfully.");
+            return addressToCreate.Id;
         }
     }
 }

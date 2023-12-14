@@ -20,7 +20,7 @@ namespace MLS.Application.Features.Employee.Commands.CreateEmployeeCommand
             var employeeToCreate = _mapper.Map<Domain.Employee>(request);
             await _employeeRepository.Create(employeeToCreate);
 
-            return employeeToCreate.EmployeeId;
+            return employeeToCreate.Id;
         }
     }
 }

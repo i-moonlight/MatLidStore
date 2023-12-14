@@ -1,8 +1,9 @@
-﻿namespace MLS.Domain;
+﻿using MLS.Domain.Common;
 
-public class Promotion
+namespace MLS.Domain;
+
+public class Promotion : BaseEntity
 {
-    public int PromotionId { get; set; }
     public string Title { get; set; } = string.Empty;
     public string Description { get; set; } = string.Empty;
     public DateTime StartDate { get; set; }

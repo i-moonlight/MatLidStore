@@ -15,10 +15,10 @@ namespace MLS.Application.Features.WishList.Commands.DeleteWishListCommand
 
         public async Task<Unit> Handle(DeleteWishListCommand request, CancellationToken cancellationToken)
         {
-            var wishListToDelete = await _wishListRepository.GetById(request.WishListId);
+            var wishListToDelete = await _wishListRepository.GetById(request.Id);
             if (wishListToDelete == null)
             {
-                throw new NotFoundException(nameof(Domain.WishList), request.WishListId);
+                throw new NotFoundException(nameof(Domain.WishList), request.Id);
             }
 
             await _wishListRepository.Delete(wishListToDelete);

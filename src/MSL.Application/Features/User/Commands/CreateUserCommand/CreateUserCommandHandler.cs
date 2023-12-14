@@ -20,7 +20,7 @@ namespace MLS.Application.Features.User.Commands.CreateUserCommand
             var userToCreate = _mapper.Map<Domain.User>(request);
             await _userRepository.Create(userToCreate);
 
-            return userToCreate.UserId;
+            return userToCreate.Id;
         }
     }
 }

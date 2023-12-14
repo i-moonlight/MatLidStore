@@ -1,6 +1,8 @@
-﻿namespace MLS.Application.Contracts.Persistence.Common
+﻿using MLS.Domain.Common;
+
+namespace MLS.Application.Contracts.Persistence.Common
 {
-    public interface IGenericRepository<T> where T : class
+    public interface IGenericRepository<T> where T : BaseEntity
     {
         Task<IReadOnlyList<T>> GetAll();
 

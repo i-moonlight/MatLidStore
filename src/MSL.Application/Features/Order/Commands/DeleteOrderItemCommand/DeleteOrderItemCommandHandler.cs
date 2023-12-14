@@ -15,11 +15,11 @@ namespace MLS.Application.Features.Order.Commands.DeleteOrderItemCommand
 
         public async Task<Unit> Handle(DeleteOrderItemCommand request, CancellationToken cancellationToken)
         {
-            var orderItemToDelete = await _orderItemRepository.GetById(request.OrderItemId);
+            var orderItemToDelete = await _orderItemRepository.GetById(request.Id);
 
             if (orderItemToDelete == null)
             {
-                throw new NotFoundException(nameof(Domain.OrderItem), request.OrderItemId);
+                throw new NotFoundException(nameof(Domain.OrderItem), request.Id);
             }
 
             await _orderItemRepository.Delete(orderItemToDelete);
