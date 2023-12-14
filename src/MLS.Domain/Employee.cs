@@ -1,8 +1,9 @@
-﻿namespace MLS.Domain;
+﻿using MLS.Domain.Common;
 
-public class Employee
+namespace MLS.Domain;
+
+public class Employee : BaseEntity
 {
-    public int EmployeeId { get; set; }
     public string Name { get; set; } = string.Empty;
 
     public string Position { get; set; } = string.Empty;

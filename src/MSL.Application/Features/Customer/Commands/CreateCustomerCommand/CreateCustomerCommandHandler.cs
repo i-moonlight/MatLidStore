@@ -20,7 +20,7 @@ namespace MLS.Application.Features.Customer.Commands.CreateCustomerCommand
             var customerToCreate = _mapper.Map<Domain.Customer>(request);
             await _customerRepository.Create(customerToCreate);
 
-            return customerToCreate.CustomerId;
+            return customerToCreate.Id;
         }
     }
 }

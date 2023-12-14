@@ -20,7 +20,7 @@ namespace MLS.Application.Features.Inventory.Commands.CreateInventoryCommand
             var inventoryToCreate = _mapper.Map<Domain.Inventory>(request);
             await _inventoryRepository.Create(inventoryToCreate);
 
-            return inventoryToCreate.InventoryId;
+            return inventoryToCreate.Id;
         }
     }
 }

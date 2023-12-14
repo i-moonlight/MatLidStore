@@ -15,11 +15,11 @@ namespace MLS.Application.Features.CartItem.Commands.DeleteCartItemCommand
 
         public async Task<Unit> Handle(DeleteCartItemCommand request, CancellationToken cancellationToken)
         {
-            var cartItemToDelete = await _cartItemRepository.GetById(request.CartItemId);
+            var cartItemToDelete = await _cartItemRepository.GetById(request.Id);
 
             if (cartItemToDelete == null)
             {
-                throw new NotFoundException(nameof(Domain.CartItem), request.CartItemId);
+                throw new NotFoundException(nameof(Domain.CartItem), request.Id);
             }
 
             await _cartItemRepository.Delete(cartItemToDelete);

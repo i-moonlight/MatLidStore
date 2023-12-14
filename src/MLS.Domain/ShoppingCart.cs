@@ -1,8 +1,9 @@
-﻿namespace MLS.Domain;
+﻿using MLS.Domain.Common;
 
-public class ShoppingCart
+namespace MLS.Domain;
+
+public class ShoppingCart : BaseEntity
 {
-    public int ShoppingCartId { get; set; }
     public int CustomerId { get; set; }
     // Các thuộc tính khác
 

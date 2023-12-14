@@ -20,7 +20,7 @@ namespace MLS.Application.Features.Promotion.Commands.CreatePromotionCommand
             var promotionToCreate = _mapper.Map<Domain.Promotion>(request);
             await _promotionRepository.Create(promotionToCreate);
 
-            return promotionToCreate.PromotionId;
+            return promotionToCreate.Id;
         }
     }
 }

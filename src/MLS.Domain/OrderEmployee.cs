@@ -1,8 +1,9 @@
-﻿namespace MLS.Domain;
+﻿using MLS.Domain.Common;
 
-public class OrderEmployee
+namespace MLS.Domain;
+
+public class OrderEmployee : BaseEntity
 {
-    public int OrderEmployeeId { get; set; }
     public int OrderId { get; set; }
     public int EmployeeId { get; set; }
     // Các thuộc tính khác

@@ -4,6 +4,6 @@ namespace MLS.Application.Features.ShoppingCart.Commands.DeleteShoppingCartComma
 {
     public class DeleteShoppingCartCommand : IRequest<Unit>
     {
-        public int ShoppingCartId { get; set; }
+        public int Id { get; set; }
     }
 }

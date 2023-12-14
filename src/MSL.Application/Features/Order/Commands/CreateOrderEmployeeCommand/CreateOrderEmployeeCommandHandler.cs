@@ -25,7 +25,7 @@ namespace MLS.Application.Features.Order.Commands.CreateOrderEmployeeCommand
             var orderEmployeeToCreate = _mapper.Map<Domain.OrderEmployee>(request);
             await _orderEmployeeRepository.Create(orderEmployeeToCreate);
 
-            return orderEmployeeToCreate.OrderEmployeeId;
+            return orderEmployeeToCreate.Id;
         }
     }
 }

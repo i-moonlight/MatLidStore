@@ -1,38 +1,45 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MLS.Application.Contracts.Persistence.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MLS.Domain.Common;
+using MLS.Persistence.DatabaseContext;
 
 namespace MLS.Persistence.Repository.Common
 {
-    public class GenericRepository<T> : IGenericRepository<T> where T : class
+    public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
     {
-        public async Task<IReadOnlyList<T>> GetAll()
-        {
-            throw new NotImplementedException();
-        }
+        private readonly MatLidStoreDatabaseContext _context;
 
-        public async Task<T> GetById(int id)
+        public GenericRepository(MatLidStoreDatabaseContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
         public async Task Create(T entity)
         {
-            throw new NotImplementedException();
-        }
-
-        public async Task Update(T entity)
-        {
-            throw new NotImplementedException();
+            await _context.AddAsync(entity);
+            await _context.SaveChangesAsync();
         }
 
         public async Task Delete(T entity)
         {
-            throw new NotImplementedException();
+            _context.Remove(entity);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task<IReadOnlyList<T>> GetAll()
+        {
+            return await _context.Set<T>().AsNoTracking().ToListAsync();
+        }
+
+        public async Task<T> GetById(int id)
+        {
+            return await _context.Set<T>().AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
+        }
+
+        public async Task Update(T entity)
+        {
+            _context.Entry(entity).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
         }
     }
 }

@@ -1,8 +1,9 @@
-﻿namespace MLS.Domain;
+﻿using MLS.Domain.Common;
 
-public class Inventory
+namespace MLS.Domain;
+
+public class Inventory : BaseEntity
 {
-    public int InventoryId { get; set; }
     public int ProductId { get; set; }
     public int QuantityInStock { get; set; }
     // Các thuộc tính khác

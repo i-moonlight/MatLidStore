@@ -1,8 +1,9 @@
-﻿namespace MLS.Domain;
+﻿using MLS.Domain.Common;
 
-public class Return
+namespace MLS.Domain;
+
+public class Return : BaseEntity
 {
-    public int ReturnId { get; set; }
     public int OrderId { get; set; }
     public DateTime ReturnDate { get; set; }
     public string Reason { get; set; } = string.Empty;

@@ -1,8 +1,9 @@
-﻿namespace MLS.Domain;
+﻿using MLS.Domain.Common;
 
-public class WishList
+namespace MLS.Domain;
+
+public class WishList : BaseEntity
 {
-    public int WishListId { get; set; }
     public int CustomerId { get; set; }
     // Các thuộc tính khác
 

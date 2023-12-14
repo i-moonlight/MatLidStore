@@ -15,10 +15,10 @@ namespace MLS.Application.Features.Employee.Commands.DeleteEmployeeCommand
 
         public async Task<Unit> Handle(DeleteEmployeeCommand request, CancellationToken cancellationToken)
         {
-            var employeeToDelete = await _employeeRepository.GetById(request.EmployeeId);
+            var employeeToDelete = await _employeeRepository.GetById(request.Id);
 
             if (employeeToDelete == null)
-                throw new NotFoundException(nameof(Domain.Employee), request.EmployeeId);
+                throw new NotFoundException(nameof(Domain.Employee), request.Id);
 
             await _employeeRepository.Delete(employeeToDelete);
 

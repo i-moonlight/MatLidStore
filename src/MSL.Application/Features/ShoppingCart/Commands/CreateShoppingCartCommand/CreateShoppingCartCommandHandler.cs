@@ -20,7 +20,7 @@ namespace MLS.Application.Features.ShoppingCart.Commands.CreateShoppingCartComma
             var shoppingCartToCreate = _mapper.Map<Domain.ShoppingCart>(request);
             await _shoppingCartRepository.Create(shoppingCartToCreate);
 
-            return shoppingCartToCreate.ShoppingCartId;
+            return shoppingCartToCreate.Id;
         }
     }
 }

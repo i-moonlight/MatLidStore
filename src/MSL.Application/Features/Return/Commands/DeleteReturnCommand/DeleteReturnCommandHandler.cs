@@ -15,11 +15,11 @@ namespace MLS.Application.Features.Return.Commands.DeleteReturnCommand
 
         public async Task<Unit> Handle(DeleteReturnCommand request, CancellationToken cancellationToken)
         {
-            var returnToDelete = await _returnRepository.GetById(request.ReturnId);
+            var returnToDelete = await _returnRepository.GetById(request.Id);
 
             if (returnToDelete == null)
             {
-                throw new NotFoundException(nameof(Domain.Return), request.ReturnId);
+                throw new NotFoundException(nameof(Domain.Return), request.Id);
             }
 
             await _returnRepository.Delete(returnToDelete);

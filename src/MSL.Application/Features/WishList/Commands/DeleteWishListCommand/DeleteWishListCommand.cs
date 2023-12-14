@@ -4,6 +4,6 @@ namespace MLS.Application.Features.WishList.Commands.DeleteWishListCommand
 {
     public class DeleteWishListCommand : IRequest<Unit>
     {
-        public int WishListId { get; set; }
+        public int Id { get; set; }
     }
 }

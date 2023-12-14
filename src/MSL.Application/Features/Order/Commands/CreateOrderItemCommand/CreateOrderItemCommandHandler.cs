@@ -20,7 +20,7 @@ namespace MLS.Application.Features.Order.Commands.CreateOrderItemCommand
             var orderItemToCreate = _mapper.Map<Domain.OrderItem>(request);
             await _orderItemRepository.Create(orderItemToCreate);
 
-            return orderItemToCreate.OrderItemId;
+            return orderItemToCreate.Id;
         }
     }
 }

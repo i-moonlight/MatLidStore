@@ -1,8 +1,9 @@
-﻿namespace MLS.Domain;
+﻿using MLS.Domain.Common;
 
-public class Address
+namespace MLS.Domain;
+
+public class Address : BaseEntity
 {
-    public int AddressId { get; set; }
     public int UserId { get; set; }
     public string Street { get; set; } = string.Empty;
     public string City { get; set; } = string.Empty;

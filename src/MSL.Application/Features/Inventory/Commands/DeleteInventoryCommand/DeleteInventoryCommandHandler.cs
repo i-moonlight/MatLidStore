@@ -15,11 +15,11 @@ namespace MLS.Application.Features.Inventory.Commands.DeleteInventoryCommand
 
         public async Task<Unit> Handle(DeleteInventoryCommand request, CancellationToken cancellationToken)
         {
-            var inventoryToDelete = await _inventoryRepository.GetById(request.InventoryId);
+            var inventoryToDelete = await _inventoryRepository.GetById(request.Id);
 
             if (inventoryToDelete == null)
             {
-                throw new NotFoundException(nameof(Domain.Inventory), request.InventoryId);
+                throw new NotFoundException(nameof(Domain.Inventory), request.Id);
             }
 
             await _inventoryRepository.Delete(inventoryToDelete);

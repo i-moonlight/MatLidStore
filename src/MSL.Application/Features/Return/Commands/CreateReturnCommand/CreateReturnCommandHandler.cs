@@ -20,7 +20,7 @@ namespace MLS.Application.Features.Return.Commands.CreateReturnCommand
             var returnToCreate = _mapper.Map<Domain.Return>(request);
             await _returnRepository.Create(returnToCreate);
 
-            return returnToCreate.ReturnId;
+            return returnToCreate.Id;
         }
     }
 }

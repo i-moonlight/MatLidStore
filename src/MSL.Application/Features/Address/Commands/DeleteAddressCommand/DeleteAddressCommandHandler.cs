@@ -15,11 +15,11 @@ namespace MLS.Application.Features.Address.Commands.DeleteAddressCommand
 
         public async Task<Unit> Handle(DeleteAddressCommand request, CancellationToken cancellationToken)
         {
-            var addressToDelete = await _addressRepository.GetById(request.AddressId);
+            var addressToDelete = await _addressRepository.GetById(request.Id);
 
             if (addressToDelete == null)
             {
-                throw new NotFoundException(nameof(Domain.Address), request.AddressId);
+                throw new NotFoundException(nameof(Domain.Address), request.Id);
             }
 
             await _addressRepository.Delete(addressToDelete);

@@ -20,7 +20,7 @@ namespace MLS.Application.Features.WishList.Commands.CreateWishListCommand
             var wishListToCreate = _mapper.Map<Domain.WishList>(request);
             await _wishListRepository.Create(wishListToCreate);
 
-            return wishListToCreate.WishListId;
+            return wishListToCreate.Id;
         }
     }
 }

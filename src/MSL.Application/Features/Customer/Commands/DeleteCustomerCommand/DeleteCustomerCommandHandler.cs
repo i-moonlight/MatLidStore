@@ -15,11 +15,11 @@ namespace MLS.Application.Features.Customer.Commands.DeleteCustomerCommand
 
         public async Task<Unit> Handle(DeleteCustomerCommand request, CancellationToken cancellationToken)
         {
-            var customerToDelete = await _customerRepository.GetById(request.CustomerId);
+            var customerToDelete = await _customerRepository.GetById(request.Id);
 
             if (customerToDelete == null)
             {
-                throw new NotFoundException(nameof(Domain.Customer), request.CustomerId);
+                throw new NotFoundException(nameof(Domain.Customer), request.Id);
             }
 
             await _customerRepository.Delete(customerToDelete);

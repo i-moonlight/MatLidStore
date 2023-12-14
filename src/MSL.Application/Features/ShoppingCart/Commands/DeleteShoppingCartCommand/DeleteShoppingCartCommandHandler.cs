@@ -15,11 +15,11 @@ namespace MLS.Application.Features.ShoppingCart.Commands.DeleteShoppingCartComma
 
         public async Task<Unit> Handle(DeleteShoppingCartCommand request, CancellationToken cancellationToken)
         {
-            var shoppingCartToDelete = await _shoppingCartRepository.GetById(request.ShoppingCartId);
+            var shoppingCartToDelete = await _shoppingCartRepository.GetById(request.Id);
 
             if (shoppingCartToDelete == null)
             {
-                throw new NotFoundException(nameof(Domain.ShoppingCart), request.ShoppingCartId);
+                throw new NotFoundException(nameof(Domain.ShoppingCart), request.Id);
             }
 
             await _shoppingCartRepository.Delete(shoppingCartToDelete);
